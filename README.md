@@ -1,6 +1,7 @@
 # **Unique MD Bot** 🤖
 
-![Bot Logo](https://example.com/your-logo.png)  <!-- Add your logo image URL here -->
+
+![Bot Logo](https://github.com/Itxxwasi/UNIQUE-MD-V2/blob/main/Unique_assets/a%20l%20u%20r%20a%20(1).jpeg)  <!-- Add your logo image URL here -->
 
 Unique MD Bot is an open-source **WhatsApp bot** designed to automate various tasks, enhance user experience, and provide educational resources through fun and interactive commands. Built with **Node.js**, it leverages the power of **WhatsApp Web API** for seamless integration.
 
