@@ -110,8 +110,8 @@ cmd(
 \`.shutdown\` - Shut down the bot
 
 *🔗 Useful Links:*
-- [GitHub Repo](https://github.com/your-bot-repo)
-- [Support Group](https://chat.whatsapp.com/yourgroup)
+- [GitHub Repo](https://github.com/Itxxwasi/UNIQUE-MD-V2)
+- [Support Group](https://www.whatsapp.com/channel/0029VaDK8ZUDjiOhwFS1cP2j)
 
 *🚀 Enjoy using Unique MD!*
 `;
