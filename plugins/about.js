@@ -1,5 +1,25 @@
+const fs = require('fs');
+const path = require('path');
 const config = require('../config');
 const { cmd, commands } = require('../command');
+
+// Function to get a random image from the 'assets' folder
+function getRandomImage() {
+    const assetsFolder = path.join(__dirname, '../Unique_assets'); // Path to the assets folder
+    const files = fs.readdirSync(assetsFolder);  // Read all files in the assets folder
+    const imageFiles = files.filter(file => file.match(/\.(jpg|jpeg|png|gif)$/i)); // Filter image files (jpg, jpeg, png, gif)
+    
+    // If there are no images in the folder, return a default image
+    if (imageFiles.length === 0) {
+        return 'https://telegra.ph/file/2a06381b260c3f096a612.jpg';  // Default image URL
+    }
+    
+    // Select a random image from the filtered list
+    const randomImage = imageFiles[Math.floor(Math.random() * imageFiles.length)];
+    
+    // Return the full path of the selected image
+    return path.join(assetsFolder, randomImage);
+}
 
 cmd({
     pattern: "about",
@@ -15,9 +35,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 ---
 
-👤 *Hello, ${pushname}!*
-
-I am *Unique MD Bot*, a WhatsApp bot designed to help you with a variety of tasks. 
+👤 *Hello, ${pushname}!*  
+I am *Unique MD Bot*, a WhatsApp bot designed to help you with a variety of tasks.
 
 ---
 
@@ -48,7 +67,7 @@ The goal is to help people learn by creating open-source tools, and to provide e
 ---
 
 🔗 *Connect with Me:*
-- *GitHub*: [Visit My GitHub](https://github.com/SILENTLOVER40/SILENT-SOBX-MD)
+- *GitHub*: [Visit My GitHub](https://github.com/Itxxwasi/UNIQUE-MD-V2)
 - *Twitter*: [@UniqueMD_Bot](https://twitter.com/UniqueMD_Bot)
 
 ---
@@ -59,7 +78,11 @@ I hope this bot helps you learn, explore, and make your experience smoother. You
 > *Powered by Mr. Wasi, Software Engineering Student*
 `;
 
-        await conn.sendMessage(from, { image: { url: config.ALIVE_IMG }, caption: aboutInfo }, { quoted: mek });
+        // Get a random image from the assets folder
+        const randomImagePath = getRandomImage();
+        
+        // Send the random image and the about info message
+        await conn.sendMessage(from, { image: { url: randomImagePath }, caption: aboutInfo }, { quoted: mek });
 
     } catch (e) {
         console.log(e);
