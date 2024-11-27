@@ -65,7 +65,7 @@ async function connectToWA() {
 
   // Function to send the bot image
   const sendBotImage = (up) => {
-      const localImgPath = path.join(__dirname, 'assets', 'bot.jpg');
+      const localImgPath = path.join(__dirname, 'assets', 'bot.jpeg');
       if (fs.existsSync(localImgPath)) {
           // If local image exists, send it
           const imageBuffer = fs.readFileSync(localImgPath);
