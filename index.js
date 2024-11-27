@@ -65,7 +65,7 @@ async function connectToWA() {
 
   // Function to send the bot image
   const sendBotImage = (up) => {
-      const localImgPath = path.join(__dirname, 'assets', 'bot.jpeg');
+      const localImgPath = path.join(__dirname, 'Unique_assets', 'bot.jpeg'); //yeee bot ky starting message may imges send kary ga
       if (fs.existsSync(localImgPath)) {
           // If local image exists, send it
           const imageBuffer = fs.readFileSync(localImgPath);
@@ -74,7 +74,7 @@ async function connectToWA() {
       } else {
           // Fallback to sending image from URL
           const fallbackUrl = 'https://files.catbox.moe/h5ddpq.jpg';
-          conn.sendMessage(conn.user.id, { image: { url: fallbackUrl }, caption: up });
+          conn.sendMessage(conn.user.id, { image: { url: fallbackUrl }, caption: up }); // agrrrr folder may images nhi mili too url se bjjyy daygaaa
           console.log('Local bot image not found. Sent image via URL.');
       }
   };
