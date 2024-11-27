@@ -3,7 +3,7 @@
  *
  * Developer Info:
  * Author: MR WASI
- * Date: [Date]
+ * Date: 27/11/2024
  * Version: 1.0.0
  * Description: This module is used for configuring and exporting various environment variables
  *              that control the behavior of the bot. Environment variables are loaded from a
