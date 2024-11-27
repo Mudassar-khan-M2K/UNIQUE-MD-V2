@@ -2,7 +2,7 @@
   "name": "Uinque-md",
   "version": "1.0.0",
   "description": "light weight wa bot using baliyes",
-  "main": "unique.js",
+  "main": "index.js",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name Uinque-md",
     "stop": "pm2 stop Uinque-md",
