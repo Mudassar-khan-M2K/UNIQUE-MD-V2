@@ -32,6 +32,7 @@
         "api-dylux": "latest",
         "aptoide-scraper": "1.0.1",
         "awesome-phonenumber": "6.2.0",
+        "google-play-scraper": "^8.0.2",
         "axios": "^1.6.7",
         "bard-ai": "2.0.3",
         "betabotz-tools": "0.0.6",
