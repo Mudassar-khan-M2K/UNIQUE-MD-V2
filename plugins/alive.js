@@ -46,7 +46,7 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         // Get files by extension from the assets folder
-        const imageFiles = getFilesByExtension(assetFolder, '.jpg').concat(getFilesByExtension(assetFolder, '.png'));
+        const imageFiles = getFilesByExtension(assetFolder, '.jpeg').concat(getFilesByExtension(assetFolder, '.png'));
         const voiceFiles = getFilesByExtension(assetFolder, '.mp3');
 
         // Ensure there are images and voice files available
