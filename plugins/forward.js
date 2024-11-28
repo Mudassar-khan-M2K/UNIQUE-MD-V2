@@ -12,11 +12,24 @@ cmd({
         const targetJid = args[0];
         if (!targetJid) return reply("❌ Please provide the JID (user or group) to forward the message to.");
 
-        // Check if the message is quoted (i.e., replying to a message)
-        const quotedMessage = quoted ? quoted : m;
-        
-        // Forward the message to the specified JID
-        await conn.forwardMessage(targetJid, quotedMessage, { quoted: mek });
+        // If the message is quoted, forward the quoted message; otherwise, forward the current message.
+        const messageToForward = quoted ? quoted : m;
+
+        // Handle different types of media
+        if (messageToForward.message) {
+            const messageType = Object.keys(messageToForward.message)[0]; // Check message type
+
+            if (messageType === "imageMessage" || messageType === "videoMessage" || messageType === "audioMessage" || messageType === "documentMessage") {
+                // For media types (image, video, audio, document), forward them
+                await conn.sendMessage(targetJid, { [messageType]: messageToForward.message[messageType] }, { quoted: mek });
+            } else if (messageType === "textMessage") {
+                // For text, just forward the text
+                await conn.sendMessage(targetJid, { text: messageToForward.message.text }, { quoted: mek });
+            } else {
+                // If the message is of any other type, forward it as-is
+                await conn.sendMessage(targetJid, messageToForward, { quoted: mek });
+            }
+        }
 
         reply(`✅ Message forwarded to: ${targetJid}`);
     } catch (e) {
