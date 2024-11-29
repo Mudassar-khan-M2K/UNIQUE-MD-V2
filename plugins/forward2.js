@@ -1,7 +1,7 @@
 const { cmd } = require('../command');
 
 cmd({
-    pattern: "forward",
+    pattern: "forward2",
     desc: "Forwards any message (text, image, video, audio, etc.) to a specified JID.",
     react: "🔁",
     category: "main",
