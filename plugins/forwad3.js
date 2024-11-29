@@ -1,5 +1,5 @@
 const { cmd } = require('../command'); // Adjust path if necessary
-const { generateWAMessageFromContent, generateForwardMessageContent, getContentType } = require('@adiwajshing/baileys'); // Ensure Baileys library is available
+const { generateWAMessageFromContent, generateForwardMessageContent, getContentType } = require('@whiskeysockets/baileys'); // Ensure Baileys library is available
 
 cmd({
     pattern: "forward3",
