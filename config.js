@@ -32,7 +32,7 @@ function convertToBool(text, fault = 'true') {
 // Exporting the configuration settings as a module
 module.exports = {
     // Bot session ID, can be set via environment variable or defaults to a placeholder
-    SESSION_ID: process.env.SESSION_ID || "enter your session", 
+    SESSION_ID: process.env.SESSION_ID || "levanter_2acfcdd199574472d9e94756bbe5304d3", 
     
     // Automatic read status, determines if the bot reads messages automatically (default is 'false')
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "false",
